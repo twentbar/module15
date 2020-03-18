@@ -1,5 +1,4 @@
 from seleniumbase import BaseCase
-from selenium.webdriver.common.by import By
 
 class NavigationTest(BaseCase):
 
@@ -11,7 +10,7 @@ class NavigationTest(BaseCase):
                      "Footwear":['//a[@data-class="babyshoes"]',self.base_url+"/footwear/s/620"]
             }
 
-    
+
     # проверяем пункты меню
     def test_01_menu(self):
         self.get(self.base_url)
@@ -25,9 +24,13 @@ class NavigationTest(BaseCase):
 
     def test_02_sub_menu(self):
         self.get(self.base_url)
-        sub = '//*[@id="mid-navigation"]/div[9]/div/div[1]/ul[2]/li[1]/a' #'//a[@href="/boots-and-winter-shoes/s/673"]'
+        sub = '//a[@href="/boots-and-winter-shoes/s/673"]'
+        #'//div[@class="babyshoes mid-navigation-container"]/div[@class="content c-16"]/div[@class="c-8"]/ul[2]/li[1]/a'
+        # '//*[@id="mid-navigation"]/div[@class="babyshoes mid-navigation-container"]//div[@class="c-8"]/ul[2]/li[1]/a'
+        #
+        #'//*[@id="mid-navigation"]/div[9]/div/div[1]/ul[2]/li[1]/a'
         self.hover_and_click('//a[@data-class="babyshoes"]', sub)
-    
+
     def test_03_find_items(self):
 
         self.get(self.base_url)
