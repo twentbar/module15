@@ -45,7 +45,7 @@ class NavigationTest(BaseCase):
         # пример, как можно задать паузу
         self.sleep(2)
   
-    def test_04_add_to_basket(self):
+    def test_04_basket(self):
         # Идем на страницу товаров
         self.get(self.base_url+'/dolce-gabbana/s/1495')
         # сохраняем название первого товара страницы
@@ -63,7 +63,7 @@ class NavigationTest(BaseCase):
         self.click('//article[1]/div[1]/form/div/a')
         # сохраняем название товара в корзине
         basket_name = self.get_text('//a[@class="product-name c-6"]/p[2]')
-        # название выбраного товара и товара в корзине должно совпасть
+        # название выбранного товара и товара в корзине должно совпасть
         self.assert_equal(item_name,basket_name)
         # удаляем товар
         self.click('//a[@class="remove"]')
