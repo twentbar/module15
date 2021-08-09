@@ -51,7 +51,7 @@ pytest-metadata==1.8.0
 pytest-ordering==0.6
 pytest-rerunfailures==8.0
 pytest-xdist==1.31.0
-pywin32==227
+pywin32==301
 requests==2.23.0
 selenium==3.141.0
 seleniumbase==1.36.1
